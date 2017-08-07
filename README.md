@@ -58,7 +58,7 @@ To play the game open a web browser and go to 'http://localhost'.
 
 ## Contributing
 
-Any pull request wich is at least decent coded will be merged and appreciated.
+Any pull request which is at least decent coded will be merged and appreciated.
 
 ## BUGS
 
