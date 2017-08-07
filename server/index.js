@@ -43,8 +43,8 @@ app.get('/:dir/:file', function(req, res) {
     res.end("Can't locate '/" + file + "'");
 })
 
-var server = http.listen(80, function() {
-  console.log("Game is running at " + chalk.green("http://localhost"));
+var server = http.listen(8080, function() {
+  console.log("Game is running at " + chalk.green("http://localhost:8080"));
 })
 
 io.on('connection', function(socket) {
