@@ -13,11 +13,11 @@ Download and extract the zip at C:/
 Install dependencies (via cmd) :
 ```sh
 cd C:/adventure-land-master
-npm install --save
+npm install
 cd ..
 ```
 
-Run the game (via cmd) :
+Run the game (via cmd, with administrator privileges) :
 ```sh
 nodejs C:/adventure-land-master
 ```
@@ -29,7 +29,7 @@ Instal Node.js :
 ~$ sudo apt-get install nodejs
 ```
 
-Instal the game :
+Dowload the game via git or download and extract the zip archive :
 ```sh
 ~$ git clone git://github.com/Tiberiu02/adventure-land.git adventure-land
 ```
@@ -37,18 +37,18 @@ Instal the game :
 Instal dependencies :
 ```sh
 ~$ cd adventure-land
-~$ sudo npm install --save
+~$ npm install
 ~$ cd ..
 ```
 
-Run the game :
+Run the game (with sudo privileges) :
 ```sh
 ~$ sudo nodejs adventure-land
 ```
 
 Update the game :
 ```sh
-~$ sudo rm -rf adventure-land
+~$ rm -rf adventure-land
 ~$ git clone git://github.com/Tiberiu02/adventure-land.git adventure-land
 ```
 
