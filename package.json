@@ -1,22 +1,21 @@
 {
-    "name":"Space_Invaders",
-    "version":"1.0.0",
-    "main":"server/index.js",
-    "dependencies":{
-        "express":"latest",
-        "compression":"latest",
-        "chalk":"latest",
-        "fs":"latest",
-        "fs":"lz-string",
-        "socket.io":"latest"
-    },
-    "devDependencies":{},
-    "scripts":{
-        "test":"echo \"Error: no test specified\" && exit 1",
-        "start": "node server/index.js"
-    },
-    "repository":{
-    },
-    "author":"Tiberiu Musat <musattiberiu@gmail.com>",
-    "license":"MIT"
+  "name": "Space_Invaders",
+  "version": "1.0.0",
+  "main": "server/index.js",
+  "dependencies": {
+    "chalk": "^2.0.1",
+    "compression": "^1.7.0",
+    "express": "~4.15.3",
+    "fs": "^0.0.1-security",
+    "lz-string": "^1.4.4",
+    "socket.io": "^2.0.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js"
+  },
+  "repository": {},
+  "author": "Tiberiu Musat <musattiberiu@gmail.com>",
+  "license": "MIT"
 }
