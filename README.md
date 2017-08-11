@@ -54,7 +54,7 @@ Update the game :
 
 ## How to play ?
 
-To play the game open a web browser and go to 'http://localhost'.
+To play the game open a web browser and go to 'http://localhost:8080'.
 
 ## Contributing
 
