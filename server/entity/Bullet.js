@@ -3,20 +3,17 @@ function Bullet(gameServer, owner) {
 
   this.priority = 0;
   
-  this.speed = 10;
-  this.angle = 0;
-  
   this.type = "bullet";
   
   this.expire = Date.now() + 1000 * 5;
   
   this.owner = owner;
-  
-  this.x = 0;
-  this.y = 0;
 
   this.width = 20;
   this.height = 50;
+  this.radius = 50;
+
+  this.targets = ["bullet"];
 }
 
 module.exports = Bullet;
@@ -36,9 +33,10 @@ Bullet.prototype.update = function(){
     
     for (var i = 0; i < this.gameServer.entity.length; i ++) {
         var e = this.gameServer.entity[i];
-        if ( e.type != "bullet" && e != this.owner && e.spectate != true &&
-             Math.abs(this.x - e.x) < 50 && Math.abs(this.y - e.y) < 50 ) {
-            e.damage( this.damage, this.owner );
+        if ( e.type != "bullet" && e != this.owner && e.spectate != true
+        && Math.abs(this.x - e.x) < this.radius && Math.abs(this.y - e.y) < this.radius ) {
+            if (this.targets.indexOf(e.type) != -1)
+              e.damage( this.damage, this.owner );
             this.destroy();
 
             return;

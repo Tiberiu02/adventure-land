@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <link rel="preload" as="image" href="entity/player_0.png">
@@ -28,6 +29,7 @@
 
     <link rel="preload" as="image" href="entity/arrow.png">
     <link rel="preload" as="image" href="entity/rocket.png">
+    <title>Adventure Land</title>
     <style>
       canvas{
         margin: 0px;
@@ -98,6 +100,8 @@
         color: #444;
         position: relative;
         background-color: #fefefe;
+        /*background-image: url("wood-texture.jpg");
+        /*background-repeat: repeat;*/
         margin: auto;
         padding-left: 30px;
         padding-right: 30px;
@@ -159,7 +163,8 @@
       div.inv-cell {
         width: 70px;
         height: 70px;
-        border: 4px solid #CCC;
+        border: 4px solid #AAA;
+        background-color: #EEE;
         display: inline-block;
         margin: 0;
       }
@@ -201,9 +206,14 @@
         height: 50px;
         width: 50px;
         margin: 12px;
+        display: flex;
+      }
+      div.craft-container {
+        width: 200px;
+         
       }
       div.inv-container {
-        height: 600px;
+        height: 400px;
         overflow-y: scroll;
         overflow-x: hidden;
       }
@@ -233,12 +243,12 @@
     <!-- The Game Menu Modal -->
     <div id="myModal" class="modal">
       <div class="main-modal">
-        <h1>Space Invaders</h1>
+        <h1>Adventure Land</h1>
         <br>
         <input id="name" style="width: 100%;" type="text" placeholder="Name ?">
         <br>
-        <button class="play" style="margin-top: 10px;width: 100%;" id="play" onclick="play()"><white>Play</white></button>
-        <button class="spectate" style="margin-top: 10px;width: 100%;" id="play" onclick="spectate()"><white>Spectate</white></button>
+        <button class="play" style="margin-top: 10px;width: 100%;" id="play" onclick="play()">Play</button>
+        <button class="spectate" style="margin-top: 10px;width: 100%;" id="spectate" onclick="spectate()">Spectate</button>
         <hr>
         <div style="text-align: left; font-size: 17px;">
           Use your mouse to aim.<br>
@@ -264,8 +274,19 @@
     <!-- The Inventory Modal -->
     <div id="inventoryModal" class="modal">
       <div class="inv-modal">
-        <h1>Inventory</h1>
+        <h1>Crafting</h1>
+        <div style="display: inline; align: center;">
+          <div class="craft-container" style="position: relative; display: inline-block;">
+            <div class="inv-cell" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="inv-cell" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="inv-cell" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <div class="inv-cell" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          </div>
+          <img src="Arrow.png" height="78px" style="vertical-align: top;margin-top: 42px;">
+          <div style="display: inline-block;margin-bottom: 42px; margin-left:10px;" class="inv-cell" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
         <br>
+        <h1>Inventory</h1>
         <div class="inv-container">
           <div class="inv-cell" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
           <div class="inv-cell" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -430,10 +451,10 @@
         </div>
       </div>
     </div>
+    <script src="//code.jquery.com/jquery-latest.min.js"></script>
+    <script src="socket.io.js"></script>
+    <script src="client.js"></script>
+    <script src="inventory.js"></script>
+    <script src="canvas.js"></script>
   </body>
-  <script src="//code.jquery.com/jquery-latest.min.js"></script>
-  <script src="client.js"></script>
-  <script src="inventory.js"></script>
-  <script src="canvas.js"></script>
-  <script src="socket.io.js"></script>
 </html>
